@@ -70,11 +70,12 @@ project's `CMakeLists.txt`:
 ### Standalone (for developers) ###
 
 If you already installed `llvm-10` on your machine:
-
+```
     mkdir build && cd build
-	cmake -DCMAKE_INSTALL_PREFIX=run -DLLVM_DIR=__here_llvm-10__/share/llvm/cmake  ..
-   	cmake --build . --target install
-	
+    # cmake -DCMAKE_INSTALL_PREFIX=run -DLLVM_DIR=__here_llvm-10__/share/llvm/cmake  ..
+    cmake -DCMAKE_INSTALL_PREFIX=run -DLLVM_DIR=../../llvm-project/build/share/llvm/cmake  ..
+    cmake --build . --target install
+```	
 Otherwise:
 
     mkdir build && cd build
