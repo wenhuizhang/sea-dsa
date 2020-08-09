@@ -115,6 +115,11 @@ int main(int argc, char** argv){
 
 ```
 
+The go to main folder:
+```
+cd ..
+```
+
 1. Generate bitcode:
 
 	    clang -O0 -c -emit-llvm -S tests/c/simple.c -o simple.ll
@@ -127,7 +132,9 @@ human-readable format.
 
 2. Run `sea-dsa` on the bitcode and print memory graphs to [dot](https://en.wikipedia.org/wiki/DOT_(graph_description_language)) format:
 
-	    seadsa -sea-dsa=butd-cs -sea-dsa-type-aware -sea-dsa-dot  simple.ll
+	    // seadsa -sea-dsa=butd-cs -sea-dsa-type-aware -sea-dsa-dot  simple.ll
+	    build/bin/seadsa -sea-dsa=butd-cs -sea-dsa-type-aware -sea-dsa-dot  simple.ll
+
 
 The options `-sea-dsa=butd-cs -sea-dsa-type-aware` enable the analysis
 implemented in our FMCAD'19 paper (see References). This command will
@@ -138,7 +145,8 @@ directory. If you want to store the `.dot` files in a different
 directory `DIR` then add the option `-sea-dsa-dot-outdir=DIR`
 
 3. Visualize `main.mem.dot` by transforming it to a `pdf` file:
-
+	
+		sudo apt install graphviz
 		dot -Tpdf main.mem.dot -o main.mem.pdf
 		open main.mem.pdf  // replace with you favorite pdf viewer 
 	
