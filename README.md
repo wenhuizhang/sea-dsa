@@ -73,7 +73,7 @@ If you already installed `llvm-10` on your machine:
 ```
     mkdir build && cd build
     # cmake -DCMAKE_INSTALL_PREFIX=run -DLLVM_DIR=__here_llvm-10__/share/llvm/cmake  ..
-    cmake -DCMAKE_INSTALL_PREFIX=run -DLLVM_DIR=../../llvm-project/build/share/llvm/cmake  ..
+    cmake -DCMAKE_INSTALL_PREFIX=run -DCMAKE_BUILD_TYPE=Debug -DLLVM_ENABLE_WARNINGS=OFF -DCMAKE_C_COMPILER=clang -DLLVM_BUILD_TYPE=Debug -DLLVM_DIR=../../llvm-project/build/share/llvm/cmake  ..
     cmake --build . --target install
 ```	
 Otherwise:
