@@ -215,7 +215,7 @@ int main(void) {
 Type the commands:
 
     clang -c -emit-llvm -S tests/c/complete_callgraph_5.c  -o ex.ll
-    sea-dsa --sea-dsa-callgraph-dot ex.ll
+    build/bin/seadsa --sea-dsa-callgraph-dot ex.ll
 
 It generates a `.dot` file called `callgraph.dot` in the current
 directory. Again, the `.dot` file can be converted to a `.pdf` file
@@ -226,11 +226,11 @@ and opened with the commands:
 
 ![Example of a call graph](https://github.com/seahorn/sea-dsa/blob/tea-dsa/tests/expected_graphs/complete_callgraph_5.jpg?raw=true)
 
-`sea-dsa` can also print some statistics about the call graph
+`build/bin/seadsa` can also print some statistics about the call graph
 resolution process (note that you need to call `clang` with `-g` to
 print file,line, and column information):
 
-    sea-dsa --sea-dsa-callgraph-stats ex.ll
+    build/bin/seadsa --sea-dsa-callgraph-stats ex.ll
 
 
     === Sea-Dsa CallGraph Statistics === 
